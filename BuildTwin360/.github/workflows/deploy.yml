@@ -32,20 +32,46 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            BuildTwin360/package-lock.json
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          if [ -d "BuildTwin360" ]; then
+            echo "Installing dependencies inside BuildTwin360..."
+            cd BuildTwin360 && npm install
+          else
+            echo "Installing dependencies at root..."
+            npm install
+          fi
 
       - name: Build Project
-        run: npm run build
+        run: |
+          if [ -d "BuildTwin360" ]; then
+            echo "Building Vite project inside BuildTwin360..."
+            cd BuildTwin360 && npm run build
+          else
+            echo "Building Vite project at root..."
+            npm run build
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Determine artifact path
+        id: set-path
+        run: |
+          if [ -d "BuildTwin360/dist" ]; then
+            echo "dist_path=./BuildTwin360/dist" >> $GITHUB_OUTPUT
+          else
+            echo "dist_path=./dist" >> $GITHUB_OUTPUT
+          fi
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: ${{ steps.set-path.outputs.dist_path }}
 
       - name: Deploy to GitHub Pages
         id: deployment
