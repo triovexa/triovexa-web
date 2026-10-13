@@ -1,0 +1,1406 @@
+/* ==========================================================================
+   TRIOVEXA - PROJECTS & PRODUCTS SHOWCASE STYLES
+   Yellow.ai Nexus Pinned Card Stacking & Progressive Zoom-Out Architecture
+   Zero Cutoffs | Zero Empty Gaps | 100% Viewport Fidelity
+   ========================================================================== */
+
+.projects-page-wrapper {
+  background-color: #070b13;
+  color: #f1f5f9;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: clip;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Ambient glow accents */
+.projects-page-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Wide Full-Width Container */
+.nexus-full-container {
+  width: 100%;
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+}
+
+/* ==========================================================================
+   PROJECTS NAVBAR & DROPDOWN MENU
+   ========================================================================== */
+
+.nav-item-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #94a3b8;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle.active {
+  color: #00f2fe;
+}
+
+.dropdown-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.25s ease;
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.projects-nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 360px;
+  background: rgba(13, 21, 39, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 242, 254, 0.15);
+  padding: 0.85rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+}
+
+.projects-nav-dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu-header {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  padding: 0.25rem 0.75rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.dropdown-menu-item:hover,
+.dropdown-menu-item.active-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-item-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.dropdown-item-icon.client-icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.dropdown-item-icon.product-icon {
+  background: rgba(0, 242, 254, 0.15);
+  color: #00f2fe;
+  border: 1px solid rgba(0, 242, 254, 0.3);
+}
+
+.dropdown-item-icon.academic-icon {
+  background: rgba(139, 92, 246, 0.15);
+  color: #8b5cf6;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.dropdown-item-info {
+  flex: 1;
+}
+
+.dropdown-item-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 0.15rem;
+}
+
+.dropdown-item-desc {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+/* Mobile Category Drawer Header */
+.mobile-drawer-category-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  padding: 0.75rem 0.5rem 0.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   CLEAN HERO SECTION (Per user image red-line removals)
+   ========================================================================== */
+
+.projects-hero-clean {
+  padding: 6.5rem 0 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.projects-clean-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.nexus-brand-text {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+/* Category Switcher Tabs */
+.projects-category-tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.projects-category-tabs {
+  display: inline-flex;
+  background: rgba(13, 21, 39, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  padding: 0.45rem;
+  gap: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.projects-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.6rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.projects-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.projects-tab-btn.active {
+  background: rgba(0, 242, 254, 0.12);
+  border-color: rgba(0, 242, 254, 0.35);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 242, 254, 0.15);
+}
+
+.tab-btn-icon {
+  font-size: 1.25rem;
+  display: flex;
+}
+
+.projects-tab-btn.active .tab-btn-icon {
+  color: #00f2fe;
+}
+
+.tab-btn-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   YELLOW.AI NEXUS PINNED STACKING CARDS & ZOOM-OUT ARCHITECTURE
+   ========================================================================== */
+
+.nexus-cards-showcase-section {
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  width: 100%;
+}
+
+.nexus-track-container {
+  position: relative;
+  width: 100%;
+}
+
+.nexus-sticky-stage {
+  position: sticky;
+  top: 75px;
+  width: 100%;
+  height: calc(100vh - 80px);
+  min-height: 520px;
+  max-height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  padding: 0.5rem 0 1rem;
+}
+
+.nexus-deck-wrapper {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Card Deck bounded height so card fits completely on all screens without cutoff */
+.nexus-card-deck {
+  position: relative;
+  width: 100%;
+  height: clamp(480px, 64vh, 560px);
+}
+
+.nexus-stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  will-change: transform;
+  transform-origin: center top;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Zero-filter GPU hardware-accelerated card dimming overlay */
+.nexus-card-dim-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #000000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  border-radius: inherit;
+  will-change: opacity;
+}
+
+.nexus-card-inner {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  height: 100%;
+  padding: clamp(1.2rem, 2vh, 1.8rem) clamp(1.6rem, 2.5vw, 2.5rem);
+  gap: clamp(1.5rem, 2.5vw, 2.8rem);
+  align-items: center;
+}
+
+/* Left Column */
+.nexus-card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.42rem;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.nexus-card-left::-webkit-scrollbar {
+  display: none;
+}
+
+.nexus-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.1rem;
+}
+
+.nexus-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 9999px;
+  padding: 0.32rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.nexus-card-title {
+  font-size: clamp(1.25rem, 1.85vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  margin: 0.1rem 0 0.45rem 0;
+}
+
+.nexus-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.55rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+}
+
+.nexus-card-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.32;
+}
+
+.nexus-bullet-dot {
+  font-size: 1.15rem;
+  line-height: 1;
+  flex-shrink: 0;
+  font-weight: 900;
+  margin-top: -1px;
+}
+
+.nexus-card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.nexus-tech-chip {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+}
+
+.nexus-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 0.15rem;
+}
+
+.nexus-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.68rem 1.45rem;
+  border-radius: 9999px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.nexus-btn-action:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.nexus-private-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.65rem 1.35rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Right Column: Device Frame */
+.nexus-card-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nexus-card-device {
+  width: 100%;
+  height: 100%;
+  max-height: clamp(260px, 38vh, 340px);
+  border-radius: 18px;
+  background: #090e1a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+  transition: transform 0.35s ease;
+  display: flex;
+}
+
+.nexus-card-device:hover {
+  transform: scale(1.02);
+}
+
+.nexus-chrome-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.nexus-card-device:hover .nexus-chrome-img {
+  transform: scale(1.04);
+}
+
+/* Multi-Image Auto-Slideshow (1.5-second cycle with Hover Zoom & Arrows) */
+.project-slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.45) 0%, rgba(6, 10, 18, 0.96) 100%), #060a12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Ambient colored blur backdrop matching active image (GPU-isolated layer) */
+.slideshow-ambient-backdrop {
+  position: absolute;
+  inset: -12px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(16px) brightness(0.35);
+  opacity: 0.65;
+  pointer-events: none;
+  transition: background-image 0.4s ease;
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+.slideshow-slide-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important; /* CRITICAL: Never crop portrait mobile screens or hardware photos */
+  object-position: center center;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out, transform 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.slideshow-slide-img.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-slideshow-container.single-image .slideshow-slide-img {
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Animated Smooth Enlargement on Mouse Hover */
+.project-slideshow-container.hovered .slideshow-slide-img.active,
+.project-slideshow-container:hover .slideshow-slide-img.active {
+  transform: scale(1.08);
+  filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 16px rgba(0, 242, 254, 0.25));
+}
+
+/* Manual Navigation Arrow Buttons */
+.slideshow-nav-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.slideshow-arrow-btn {
+  pointer-events: auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(7, 11, 20, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  opacity: 0.85;
+}
+
+.slideshow-arrow-btn:hover {
+  background: #00f2fe;
+  color: #070b13;
+  border-color: #00f2fe;
+  transform: scale(1.15);
+  box-shadow: 0 0 18px rgba(0, 242, 254, 0.7);
+  opacity: 1;
+}
+
+/* Floating Zoom Badge on Hover */
+.slideshow-zoom-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(7, 11, 20, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  z-index: 6;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.project-slideshow-container:hover .slideshow-zoom-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle dot indicators */
+.slideshow-dots {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 3px 6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.slideshow-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transition: all 0.25s ease;
+}
+
+.slideshow-dot.active {
+  width: 13px;
+  border-radius: 9999px;
+  background: #00f2fe;
+  box-shadow: 0 0 6px rgba(0, 242, 254, 0.8);
+}
+
+/* ==========================================================================
+   FULLSCREEN ENLARGED LIGHTBOX MODAL
+   ========================================================================== */
+
+.slideshow-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(4, 7, 15, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: lightboxFadeIn 0.25s ease forwards;
+  cursor: zoom-out;
+}
+
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slideshow-lightbox-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.slideshow-lightbox-img {
+  max-width: 88vw;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 242, 254, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: lightboxZoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes lightboxZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.slideshow-lightbox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.slideshow-lightbox-close:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  transform: scale(1.1);
+}
+
+.slideshow-lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(13, 21, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.slideshow-lightbox-arrow.prev {
+  left: -60px;
+}
+
+.slideshow-lightbox-arrow.next {
+  right: -60px;
+}
+
+.slideshow-lightbox-arrow:hover {
+  background: #00f2fe;
+  color: #070b13;
+  border-color: #00f2fe;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+}
+
+.slideshow-lightbox-counter {
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #94a3b8;
+  background: rgba(13, 21, 39, 0.8);
+  padding: 0.25rem 0.8rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .slideshow-lightbox-arrow.prev {
+    left: 8px;
+  }
+  .slideshow-lightbox-arrow.next {
+    right: 8px;
+  }
+  .slideshow-lightbox-close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+/* Floating Dock Controls */
+.nexus-dock-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(13, 21, 39, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 0.35rem 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nexus-dock-arrows {
+  display: flex;
+  align-items: center;
+}
+
+.nexus-arrow-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.nexus-arrow-btn:hover:not(:disabled) {
+  background: rgba(0, 242, 254, 0.2);
+  border-color: rgba(0, 242, 254, 0.4);
+  color: #00f2fe;
+}
+
+.nexus-arrow-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nexus-dock-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nexus-dock-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dock-pill-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #64748b;
+  transition: all 0.2s ease;
+}
+
+.nexus-dock-pill:hover {
+  color: #ffffff;
+}
+
+.nexus-dock-pill.active {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: rgba(0, 242, 254, 0.3);
+  color: #ffffff;
+}
+
+.nexus-dock-pill.active .dock-pill-indicator {
+  background: #00f2fe;
+  box-shadow: 0 0 8px #00f2fe;
+}
+
+.nexus-dock-grid-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #00f2fe;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nexus-dock-grid-btn:hover {
+  background: rgba(0, 242, 254, 0.15);
+}
+
+/* ==========================================================================
+   ALL PROJECTS GRID OVERVIEW SECTION (Directly follows the cards stream)
+   ========================================================================== */
+
+.projects-grid-overview-section {
+  padding: 4rem 0 5rem;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.grid-overview-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.grid-overview-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #00f2fe;
+  background: rgba(0, 242, 254, 0.1);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  padding: 0.4rem 1.1rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.grid-overview-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.grid-overview-subtitle {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Simple Responsive Card Grid (Matching Second Image Reference) */
+.projects-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2.2rem;
+}
+
+.project-grid-card {
+  background: rgba(13, 21, 39, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+.project-grid-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 242, 254, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 242, 254, 0.15);
+}
+
+.grid-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #090e1a;
+  overflow: hidden;
+}
+
+.grid-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-grid-card:hover .grid-card-img {
+  transform: scale(1.05);
+}
+
+.grid-card-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(7, 11, 19, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.grid-card-body {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.grid-card-meta {
+  margin-bottom: 0.4rem;
+}
+
+.grid-card-category {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: #00f2fe;
+}
+
+.grid-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.grid-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.15rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.grid-card-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.grid-bullet-dot {
+  color: #00f2fe;
+  font-size: 1.15rem;
+  line-height: 1;
+  flex-shrink: 0;
+  font-weight: 800;
+  margin-top: -1px;
+}
+
+.grid-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid-tech-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.grid-card-actions {
+  margin-top: auto;
+}
+
+.btn-grid-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-grid-action.live {
+  background: #10b981;
+  color: #070b13;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+}
+
+.btn-grid-action.live:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.btn-grid-action.inquire {
+  background: rgba(0, 242, 254, 0.12);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  color: #00f2fe;
+}
+
+.btn-grid-action.inquire:hover {
+  background: #00f2fe;
+  color: #070b13;
+  transform: translateY(-2px);
+}
+
+.grid-private-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #f59e0b;
+  padding: 0.7rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   Smooth Hardware-Accelerated Stacking & Zoom-Out Animation on Mobile
+   Desktop View Unchanged
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .nexus-sticky-stage {
+    top: 65px;
+    height: calc(100vh - 70px);
+    min-height: 480px;
+  }
+
+  .nexus-deck-wrapper {
+    padding: 0 1rem;
+    gap: 0.85rem;
+  }
+
+  .nexus-card-deck {
+    height: clamp(450px, 70vh, 520px);
+  }
+
+  .nexus-card-inner {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1.8rem;
+  }
+
+  .nexus-card-device {
+    max-height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-hero-clean {
+    padding: 5.5rem 0 1rem;
+  }
+
+  .projects-clean-title {
+    font-size: 1.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .projects-category-tabs-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .projects-category-tabs {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.35rem;
+    gap: 0.35rem;
+  }
+
+  .projects-tab-btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.82rem;
+    gap: 0.45rem;
+  }
+
+  .tab-btn-icon {
+    font-size: 1.05rem;
+  }
+
+  .tab-btn-label {
+    font-size: 0.82rem;
+  }
+
+  /* Keep sticky stage & smooth stacking on mobile */
+  .nexus-sticky-stage {
+    top: 60px;
+    height: calc(100vh - 65px);
+    min-height: 460px;
+    padding: 0.35rem 0 0.75rem;
+  }
+
+  .nexus-deck-wrapper {
+    padding: 0 0.75rem;
+    gap: 0.65rem;
+  }
+
+  .nexus-card-deck {
+    height: clamp(450px, 74vh, 530px);
+  }
+
+  .nexus-stack-card {
+    border-radius: 22px;
+  }
+
+  /* Mobile card inner: clean vertical flex layout */
+  .nexus-card-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 1.15rem 1.2rem;
+    gap: 0.55rem;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .nexus-card-left {
+    height: auto !important;
+    width: 100% !important;
+    gap: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  .nexus-pill-row {
+    gap: 0.35rem;
+  }
+
+  .nexus-tag-pill {
+    padding: 0.25rem 0.8rem;
+    font-size: 0.74rem;
+  }
+
+  .nexus-card-title {
+    font-size: clamp(1.2rem, 4.8vw, 1.45rem);
+    line-height: 1.2;
+    margin: 0.15rem 0 0.45rem 0;
+  }
+
+  .nexus-card-bullets {
+    gap: 0.35rem;
+    margin: 0 0 0.55rem 0;
+  }
+
+  .nexus-card-bullets li {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    gap: 0.5rem;
+  }
+
+  .nexus-bullet-dot {
+    font-size: 1.1rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: -1px;
+  }
+
+  /* On small screens, keep 2 high-impact bullets so mockup fits cleanly */
+  .nexus-card-bullets li:nth-child(n+3) {
+    display: none;
+  }
+
+  .nexus-card-chips {
+    gap: 0.3rem;
+  }
+
+  .nexus-tech-chip {
+    font-size: 0.66rem;
+    padding: 0.16rem 0.45rem;
+  }
+
+  .nexus-tech-chip:nth-child(n+5) {
+    display: none;
+  }
+
+  .nexus-card-actions {
+    padding-top: 0.15rem;
+  }
+
+  .nexus-btn-action,
+  .nexus-private-badge {
+    width: 100%;
+    justify-content: center;
+    padding: 0.52rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Mockup frame adapts smoothly below content on mobile */
+  .nexus-card-right {
+    height: auto !important;
+    width: 100% !important;
+    flex: 1;
+    min-height: 110px;
+    max-height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .nexus-card-device {
+    width: 100%;
+    height: 100%;
+    max-height: 175px;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  /* Mobile Floating Dock Controls */
+  .nexus-dock-controls {
+    padding: 0.25rem 0.6rem;
+    gap: 0.4rem;
+  }
+
+  .nexus-arrow-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.95rem;
+  }
+
+  .nexus-dock-pills {
+    gap: 0.25rem;
+  }
+
+  .nexus-dock-pill {
+    padding: 0.22rem 0.5rem;
+    font-size: 0.72rem;
+  }
+
+  .nexus-dock-grid-btn {
+    padding: 0.22rem 0.65rem;
+    font-size: 0.7rem;
+  }
+
+  /* Overview Grid mobile */
+  .projects-simple-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

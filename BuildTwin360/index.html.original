@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIOVEXA - Enterprise Software & Mobile App Solutions</title>
+  <meta name="description" content="TRIOVEXA delivers custom software, mobile apps, Textiles, Transport, Garments, Dyeing, Travels, and Shop E-commerce solutions. 200+ successful projects, 98% 5-star client satisfaction.">
+
+  <!-- Remix Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- Custom Midnight Ocean & Electric Sky CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Animated Liquid Aurora Glow Blobs Background -->
+  <div class="aurora-container">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+  </div>
+
+  <!-- Background Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Header Navigation -->
+  <header class="header" id="main-header">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="#" class="logo">
+          <div class="logo-icon"><i class="ri-code-s-slash-line"></i></div>
+          <span><span class="gradient-sky-text">TRIO</span>VEXA</span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#delivery" class="nav-link">Client Success</a></li>
+          <li><a href="#dashboard" class="nav-link">Executive Dashboard</a></li>
+          <li><a href="#services" class="nav-link">Industries & Projects</a></li>
+          <li><a href="#estimator" class="nav-link">Cost Estimator</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-sky">
+            <span>Get Free Quote</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-pulse"></span>
+          <span>🏆 200+ Successful Projects Delivered • 98% 5-Star Rating</span>
+        </div>
+
+        <h1 class="hero-title">
+          Custom Software & App Solutions For <br>
+          <span id="typewriter-target" class="typewriter-text">Textiles & Garments</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          We build high-performance Web Applications, Mobile Apps, and Enterprise ERP Systems for Textiles, Transport, Garments, Dyeing, Travels, Shops, and Custom Business Requirements.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn btn-sky">
+            <i class="ri-whatsapp-line"></i>
+            <span>Start Your Project Today</span>
+          </a>
+          <a href="#delivery" class="btn btn-outline-sky">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>See Verified Delivery Workflow</span>
+          </a>
+        </div>
+
+        <!-- Track Record Highlights -->
+        <div class="stats-grid">
+          <div class="glass-card stat-card">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Software Projects Done</div>
+          </div>
+          <div class="glass-card stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">5-Star Client Rating</div>
+          </div>
+          <div class="glass-card stat-card">
+            <div class="stat-number">7+</div>
+            <div class="stat-label">Specialized Industry Verticals</div>
+          </div>
+          <div class="glass-card stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Customised Delivery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Happy Client Project Delivery Section -->
+  <section id="delivery" class="delivery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ri-emotion-happy-line"></i> Client Satisfaction Guarantee</span>
+        <h2>Proven Software Delivery Cycle</h2>
+        <p>From initial requirement planning to final deployment and support, we ensure 100% client satisfaction on every software build.</p>
+      </div>
+
+      <div class="delivery-section-grid">
+        <!-- Animated Image Container with Floating Badges -->
+        <div class="delivery-image-container">
+          <!-- Floating Badge 1 (Top Left) -->
+          <div class="floating-badge badge-top-left">
+            <div class="badge-icon"><i class="ri-checkbox-circle-fill"></i></div>
+            <div>
+              <div class="badge-text-title">Delivered Successfully!</div>
+              <div class="badge-text-sub">100% Verified Quality</div>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2 (Bottom Right) -->
+          <div class="floating-badge badge-bottom-right">
+            <div class="badge-icon"><i class="ri-thumb-up-fill"></i></div>
+            <div>
+              <div class="badge-text-title">Happy Client 👍</div>
+              <div class="badge-text-sub">98% 5-Star Satisfaction</div>
+            </div>
+          </div>
+
+          <div class="delivery-img-wrapper">
+            <img src="./assets/images/happy-client-delivery.jpg" alt="TRIOVEXA Software Development Project Delivered Successfully to Happy Client">
+          </div>
+        </div>
+
+        <!-- Software Development Cycle Checklist -->
+        <div>
+          <h3 style="font-size:1.8rem; margin-bottom:1rem; color:var(--text-main);">
+            Our Guaranteed 5-Step Project Lifecycle
+          </h3>
+          <p style="color:var(--text-sky-light); margin-bottom:1.5rem;">
+            We maintain full transparency with clients throughout the entire development process:
+          </p>
+
+          <div class="checklist-card">
+            <div class="checklist-item">
+              <div class="check-icon"><i class="ri-check-line"></i></div>
+              <div>
+                <strong style="color:#ffffff;">1. Planning & Architecture Requirements</strong>
+                <div style="font-size:0.85rem; color:var(--text-muted);">In-depth requirement analysis and DB architecture design.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <div class="check-icon"><i class="ri-check-line"></i></div>
+              <div>
+                <strong style="color:#ffffff;">2. High-Speed Software & App Development</strong>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Agile sprint development using React, Next.js, Android & Node.js.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <div class="check-icon"><i class="ri-check-line"></i></div>
+              <div>
+                <strong style="color:#ffffff;">3. Rigorous QA & Security Testing</strong>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Zero-bug unit testing, load stress test, and security audit.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <div class="check-icon"><i class="ri-check-line"></i></div>
+              <div>
+                <strong style="color:#ffffff;">4. Seamless Cloud Deployment</strong>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Deploying live production builds with SSL encryption and domain setup.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <div class="check-icon"><i class="ri-check-line"></i></div>
+              <div>
+                <strong style="color:#ffffff;">5. Post-Launch Technical Support</strong>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Continuous SLA maintenance, backup, and immediate support.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ultra Professional Executive Software Dashboard Section -->
+  <section id="dashboard" class="dashboard-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ri-shield-flash-line"></i> Live Performance Telemetry</span>
+        <h2>Executive Software & Success Dashboard</h2>
+        <p>Real-time performance analytics, project completion velocity, and verified client satisfaction metrics across 200+ enterprise deployments.</p>
+      </div>
+
+      <div class="pro-dashboard-container">
+        <!-- Top Status Bar -->
+        <div class="dashboard-top-status">
+          <div class="status-indicator-pill">
+            <span class="status-dot"></span>
+            <span>SYSTEM STATUS: ALL 200+ SOFTWARE DEPLOYMENTS VERIFIED OPERATIONAL</span>
+          </div>
+          <div class="dashboard-sync-tag">
+            <i class="ri-refresh-line" style="color:var(--text-sky-bright);"></i> SLA Compliance Rate: <strong style="color:#ffffff;">100% Optimal</strong>
+          </div>
+        </div>
+
+        <!-- Executive KPI Grid Cards -->
+        <div class="dashboard-grid">
+          <div class="kpi-card-pro">
+            <div class="kpi-top-row">
+              <div class="kpi-icon-wrapper"><i class="ri-pie-chart-2-line"></i></div>
+              <div class="kpi-trend-tag">+2.4% vs Avg</div>
+            </div>
+            <div class="kpi-val-large">98.4%</div>
+            <div class="kpi-title-pro">Overall Success Rate</div>
+            <div class="kpi-sub-pro">Across 200+ completed builds</div>
+          </div>
+
+          <div class="kpi-card-pro">
+            <div class="kpi-top-row">
+              <div class="kpi-icon-wrapper"><i class="ri-checkbox-circle-line"></i></div>
+              <div class="kpi-trend-tag" style="background:rgba(0,242,254,0.1); color:var(--text-sky-bright);">100% Verified</div>
+            </div>
+            <div class="kpi-val-large">200+</div>
+            <div class="kpi-title-pro">Projects Delivered</div>
+            <div class="kpi-sub-pro">Apps & Software Systems</div>
+          </div>
+
+          <div class="kpi-card-pro">
+            <div class="kpi-top-row">
+              <div class="kpi-icon-wrapper"><i class="ri-time-line"></i></div>
+              <div class="kpi-trend-tag">0.8% Ahead</div>
+            </div>
+            <div class="kpi-val-large">99.2%</div>
+            <div class="kpi-title-pro">On-Time Velocity</div>
+            <div class="kpi-sub-pro">Zero delivery delays</div>
+          </div>
+
+          <div class="kpi-card-pro">
+            <div class="kpi-top-row">
+              <div class="kpi-icon-wrapper"><i class="ri-star-fill" style="color:var(--accent-amber);"></i></div>
+              <div class="kpi-trend-tag" style="background:rgba(251,191,36,0.15); color:var(--accent-amber);">4.95 / 5.0</div>
+            </div>
+            <div class="kpi-val-large">98.0%</div>
+            <div class="kpi-title-pro">Client Satisfaction</div>
+            <div class="kpi-sub-pro">Verified 5-Star reviews</div>
+          </div>
+        </div>
+
+        <!-- Analytics Breakdown Grid -->
+        <div class="dashboard-analytics-wrapper">
+          <div class="progress-card-inner">
+            <h3 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-sky-bright); display:flex; align-items:center; gap:0.6rem;">
+              <i class="ri-bar-chart-grouped-line"></i> Industry Success Rate Breakdown
+            </h3>
+
+            <div class="progress-list">
+              <div>
+                <div class="progress-item-header">
+                  <span>Textiles & Garments ERPs <span class="progress-item-badge">65+ Done</span></span>
+                  <span style="color:var(--accent-emerald);">99.1% Success</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 99.1%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="progress-item-header">
+                  <span>Transport & Fleet Apps <span class="progress-item-badge">45+ Done</span></span>
+                  <span style="color:var(--accent-emerald);">98.5% Success</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 98.5%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="progress-item-header">
+                  <span>Shop E-Commerce & POS <span class="progress-item-badge">40+ Done</span></span>
+                  <span style="color:var(--accent-emerald);">99.4% Success</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 99.4%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="progress-item-header">
+                  <span>Dyeing Mill Automation <span class="progress-item-badge">35+ Done</span></span>
+                  <span style="color:var(--accent-emerald);">97.8% Success</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 97.8%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="progress-item-header">
+                  <span>Travels Booking & Apps <span class="progress-item-badge">25+ Done</span></span>
+                  <span style="color:var(--accent-emerald);">98.0% Success</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 98.0%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="progress-item-header">
+                  <span>Custom Enterprise Software <span class="progress-item-badge">20+ Done</span></span>
+                  <span style="color:var(--accent-emerald);">100% Success</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Window Frame Graphic -->
+          <div class="dashboard-graphic-frame">
+            <div class="dashboard-window-bar">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div style="font-size:0.78rem; color:#bae6fd; font-weight:600;">
+                <i class="ri-line-chart-line" style="color:var(--text-sky-bright);"></i> TRIOVEXA-SYNERGY-ANALYTICS-V4.5
+              </div>
+              <div style="font-size:0.75rem; color:#10b981; font-weight:700;">🟢 LIVE</div>
+            </div>
+            <img src="./assets/images/pro-dashboard.jpg" alt="TRIOVEXA Professional Executive SaaS Analytics Dashboard Interface">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Industries & Solutions Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ri-building-4-line"></i> Specialized Solutions</span>
+        <h2>Industries We Empower</h2>
+        <p>From manufacturing plants to retail shops, we design and deploy tailored software and mobile applications.</p>
+      </div>
+
+      <div class="industry-grid">
+        <!-- 1. Textiles Projects -->
+        <div class="glass-card industry-card">
+          <div class="industry-icon"><i class="ri-shirt-line"></i></div>
+          <h3>Textiles Projects</h3>
+          <p>Yarn inventory tracking, loom production monitoring, fabric billing, and mill ERP software.</p>
+          <ul class="industry-list">
+            <li><i class="ri-checkbox-circle-fill"></i> Raw Material & Greige Stock Tracker</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Loom Production & Operator Logs</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Dispatch & GST Automated Invoicing</li>
+          </ul>
+        </div>
+
+        <!-- 2. Transport Projects -->
+        <div class="glass-card industry-card">
+          <div class="industry-icon"><i class="ri-truck-line"></i></div>
+          <h3>Transport & Logistics</h3>
+          <p>Live GPS vehicle tracking apps, driver assignment, trip billing, and fleet management portals.</p>
+          <ul class="industry-list">
+            <li><i class="ri-checkbox-circle-fill"></i> Real-Time Driver & Vehicle App</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Fuel Expense & Maintenance Logs</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Automated Consignment Tracking</li>
+          </ul>
+        </div>
+
+        <!-- 3. Garments Projects -->
+        <div class="glass-card industry-card">
+          <div class="industry-icon"><i class="ri-scissors-2-line"></i></div>
+          <h3>Garments Software</h3>
+          <p>Style order sheets, cutting unit trackers, stitching line capacity, and export packing systems.</p>
+          <ul class="industry-list">
+            <li><i class="ri-checkbox-circle-fill"></i> Order Sampling & Costing Sheets</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Cutting & Sewing Line Efficiency</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Export Packing List Generator</li>
+          </ul>
+        </div>
+
+        <!-- 4. Dyeing Unit Projects -->
+        <div class="glass-card industry-card">
+          <div class="industry-icon"><i class="ri-drop-line"></i></div>
+          <h3>Dyeing Unit Software</h3>
+          <p>Chemical lab recipe management, batch dyeing status, shade matching, and liquor ratio logs.</p>
+          <ul class="industry-list">
+            <li><i class="ri-checkbox-circle-fill"></i> Lab Recipe & Shade Combination</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Dye Vessel Batch Automation</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Chemical Stock & Reorder Alerts</li>
+          </ul>
+        </div>
+
+        <!-- 5. Travels Projects -->
+        <div class="glass-card industry-card">
+          <div class="industry-icon"><i class="ri-bus-2-line"></i></div>
+          <h3>Travels & Reservations</h3>
+          <p>Vehicle booking portals, seat reservation apps, tour package booking engines, and driver apps.</p>
+          <ul class="industry-list">
+            <li><i class="ri-checkbox-circle-fill"></i> Online Passenger Booking App</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Tour Package & Hotel Booking</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Instant SMS & WhatsApp Confirmation</li>
+          </ul>
+        </div>
+
+        <!-- 6. Shop E-Commerce & POS -->
+        <div class="glass-card industry-card">
+          <div class="industry-icon"><i class="ri-store-2-line"></i></div>
+          <h3>Shop Websites & Billing Apps</h3>
+          <p>Retail store e-commerce websites, POS barcode billing apps, inventory management & customer rewards.</p>
+          <ul class="industry-list">
+            <li><i class="ri-checkbox-circle-fill"></i> Custom E-Commerce Web & Android App</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Thermal Printer Barcode Billing POS</li>
+            <li><i class="ri-checkbox-circle-fill"></i> Daily Sales & Profit Dashboards</li>
+          </ul>
+        </div>
+
+        <!-- 7. Customized Tailor-Made Software -->
+        <div class="glass-card industry-card" style="grid-column: 1 / -1; background: rgba(0, 242, 254, 0.08); border-color: var(--border-glow);">
+          <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+            <div class="industry-icon" style="background:var(--gradient-electric-sky); color:#070d19; margin-bottom:0;"><i class="ri-magic-line"></i></div>
+            <div style="flex:1;">
+              <h3>Fully Customized Software & Mobile Apps</h3>
+              <p style="margin-bottom:0.5rem; color:var(--text-sky-light);">
+                Have a unique business workflow? We design and build 100% tailor-made software solutions matching your exact business process.
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-sky">Request Custom Build</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instant Cost Estimator -->
+  <section id="estimator" class="estimator-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ri-calculator-line"></i> Project Estimator</span>
+        <h2>Estimate Your Project Budget & Timeline</h2>
+        <p>Choose your software type and options to get an instant cost calculation.</p>
+      </div>
+
+      <div class="glass-card estimator-box">
+        <div class="estimator-step-title">1. Select Your Software Type:</div>
+        <div class="estimator-options-grid">
+          <div class="estimator-opt-card selected" data-price="1800" data-weeks="3">
+            <i class="ri-store-2-line"></i>
+            <div style="font-weight:700;">Shop Website & App</div>
+            <div style="font-size:0.8rem; color:var(--text-sky-light);">Billing & E-Commerce</div>
+          </div>
+          <div class="estimator-opt-card" data-price="2800" data-weeks="4">
+            <i class="ri-shirt-line"></i>
+            <div style="font-weight:700;">Textiles & Garments ERP</div>
+            <div style="font-size:0.8rem; color:var(--text-sky-light);">Production & Stock</div>
+          </div>
+          <div class="estimator-opt-card" data-price="2500" data-weeks="3">
+            <i class="ri-truck-line"></i>
+            <div style="font-weight:700;">Transport & Travels</div>
+            <div style="font-size:0.8rem; color:var(--text-sky-light);">GPS & Reservations</div>
+          </div>
+          <div class="estimator-opt-card" data-price="3200" data-weeks="4">
+            <i class="ri-settings-5-line"></i>
+            <div style="font-weight:700;">Custom Enterprise</div>
+            <div style="font-size:0.8rem; color:var(--text-sky-light);">Tailor-Made Software</div>
+          </div>
+        </div>
+
+        <div class="estimator-step-title">2. Select Add-on Features:</div>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-bottom:1.5rem;">
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; background:var(--bg-glass); padding:0.85rem; border-radius:var(--radius-sm); border:1px solid var(--border-glass);">
+            <input type="checkbox" class="estimator-feature-cb" data-add-price="500" data-add-weeks="0.5" checked>
+            <span>Android / iOS Mobile App</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; background:var(--bg-glass); padding:0.85rem; border-radius:var(--radius-sm); border:1px solid var(--border-glass);">
+            <input type="checkbox" class="estimator-feature-cb" data-add-price="400" data-add-weeks="0.5">
+            <span>WhatsApp & SMS Alerts</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; background:var(--bg-glass); padding:0.85rem; border-radius:var(--radius-sm); border:1px solid var(--border-glass);">
+            <input type="checkbox" class="estimator-feature-cb" data-add-price="600" data-add-weeks="1">
+            <span>GST & Thermal Printer Billing</span>
+          </label>
+        </div>
+
+        <div class="estimator-result-card">
+          <div>
+            <div style="font-size:0.9rem; color:var(--text-sky-bright); font-weight:700;">ESTIMATED INVESTMENT & DURATION</div>
+            <div style="display:flex; align-items:baseline; gap:2rem; margin-top:0.4rem;">
+              <div>
+                <span style="font-size:0.85rem; color:var(--text-dim);">Estimated Price:</span>
+                <div class="result-val" id="estimator-price">$2,300</div>
+              </div>
+              <div>
+                <span style="font-size:0.85rem; color:var(--text-dim);">Delivery Time:</span>
+                <div class="result-val" id="estimator-timeline" style="color:var(--text-sky-bright);">3.5 Weeks</div>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-sky">
+            <span>Book Free Demo</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ri-gallery-line"></i> Verified Case Studies</span>
+        <h2>Recent Completed Projects</h2>
+        <p>Take a look at some of our 200+ successful deployments across different sectors.</p>
+      </div>
+
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All Deliveries (200+)</button>
+        <button class="filter-btn" data-filter="textile">Textile & Garments</button>
+        <button class="filter-btn" data-filter="transport">Transport & Travels</button>
+        <button class="filter-btn" data-filter="shop">Shop & E-Commerce</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="glass-card portfolio-card" data-category="textile">
+          <div class="portfolio-img-wrapper">
+            <img src="./assets/images/textile-erp.jpg" alt="Textile & Dyeing ERP">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Textile & Dyeing</span>
+              <span class="portfolio-tag">ERP</span>
+              <span class="portfolio-tag">GST Billing</span>
+            </div>
+            <h3>TexDye Mill ERP & Recipe Suite</h3>
+            <p style="color:var(--text-sky-light); font-size:0.9rem; margin-top:0.5rem;">
+              Complete greige fabric inventory, dyeing vessel batch tracking, and automated GST invoice billing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card portfolio-card" data-category="transport">
+          <div class="portfolio-img-wrapper">
+            <img src="./assets/images/transport-app.jpg" alt="Transport & Travels App">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Transport & Travels</span>
+              <span class="portfolio-tag">GPS App</span>
+              <span class="portfolio-tag">Driver App</span>
+            </div>
+            <h3>FleetSync Live Transport App</h3>
+            <p style="color:var(--text-sky-light); font-size:0.9rem; margin-top:0.5rem;">
+              Real-time fleet tracking, consignment status updates, driver route assignment, and trip expense logs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card portfolio-card" data-category="shop">
+          <div class="portfolio-img-wrapper">
+            <img src="./assets/images/happy-client-delivery.jpg" alt="Shop E-Commerce Web & POS">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Shop & Retail</span>
+              <span class="portfolio-tag">E-Commerce</span>
+              <span class="portfolio-tag">Thermal POS</span>
+            </div>
+            <h3>RetailPro Shop Web & Barcode POS</h3>
+            <p style="color:var(--text-sky-light); font-size:0.9rem; margin-top:0.5rem;">
+              Online shopping website paired with Android thermal printer barcode billing app for fast checkouts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Ratings & Testimonials -->
+  <section id="ratings" class="ratings-section">
+    <div class="container">
+      <div class="ratings-banner">
+        <div class="stars-wrapper">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+        </div>
+        <h2 style="font-size:2.4rem; color:var(--text-main);">98% Client Satisfaction Rate</h2>
+        <p style="color:var(--text-sky-light); font-size:1.1rem; max-width:650px; margin:0.5rem auto 0 auto;">
+          Over 200+ clients trust TRIOVEXA for uninterrupted technical support, high software performance, and custom business automation.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="glass-card testimonial-card">
+          <p style="font-style:italic; color:var(--text-sky-light);">
+            "TRIOVEXA delivered our Dyeing Unit & Garments production software on time. The batch tracking and chemical stock alerts saved us huge costs!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TM</div>
+            <div>
+              <div style="font-weight:700;">Textile Mill Manager</div>
+              <small style="color:var(--text-dim);">Tirupur Textile Hub</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card">
+          <p style="font-style:italic; color:var(--text-sky-light);">
+            "Our Travels booking app & driver fleet tracker built by TRIOVEXA has simplified daily trip management. Exceptional 5-star team support!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TL</div>
+            <div>
+              <div style="font-weight:700;">Transport & Logistics Owner</div>
+              <small style="color:var(--text-dim);">Fleet Services</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card">
+          <p style="font-style:italic; color:var(--text-sky-light);">
+            "Superb shop billing website and mobile app! Barcode scanning is ultra-fast, and our customers love ordering online."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RS</div>
+            <div>
+              <div style="font-weight:700;">Retail Store Proprietor</div>
+              <small style="color:var(--text-dim);">Retail Superstore</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ri-customer-service-fill"></i> Get Started</span>
+        <h2>Let's Discuss Your Software & App Project</h2>
+        <p>Send us your requirements to receive a detailed cost proposal and live demo.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <h3>Contact TRIOVEXA</h3>
+          <p style="color:var(--text-sky-light); margin-top:0.5rem;">
+            Ready to digitize your business? Fill in the form or call us directly. Our team responds within 2 hours.
+          </p>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="ri-phone-fill"></i></div>
+              <div>
+                <div style="font-weight:700;">Direct Phone / WhatsApp</div>
+                <div style="color:var(--text-sky-light);">+91 98765 43210</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="ri-mail-fill"></i></div>
+              <div>
+                <div style="font-weight:700;">Official Email</div>
+                <div style="color:var(--text-sky-light);">contact@triovexa.com</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="ri-map-pin-fill"></i></div>
+              <div>
+                <div style="font-weight:700;">Headquarters</div>
+                <div style="color:var(--text-sky-light);">Software Development Center & Global Client Desk</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <form id="triovexa-contact-form">
+            <div class="form-group">
+              <label for="form-name">Your Name / Company Name *</label>
+              <input type="text" id="form-name" class="form-control" placeholder="e.g. Ramesh Textiles / Kumar Travels" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-email">Mobile Number / Email *</label>
+              <input type="text" id="form-email" class="form-control" placeholder="Mobile Number or Email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-service">Select Project Category</label>
+              <select id="form-service" class="form-control">
+                <option value="textile">Textiles / Garments / Dyeing Software</option>
+                <option value="transport">Transport / Travels / Fleet App</option>
+                <option value="shop">Shop Website & Billing App</option>
+                <option value="custom">Fully Customized Software / App</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="form-message">Project Requirements Details</label>
+              <textarea id="form-message" class="form-control" rows="4" placeholder="Mention your requirements, features needed, or budget..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-sky" style="width:100%;">
+              <i class="ri-send-plane-fill"></i> Send Project Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="logo" style="margin-bottom:1rem;">
+            <div class="logo-icon"><i class="ri-code-s-slash-line"></i></div>
+            <span><span class="gradient-sky-text">TRIO</span>VEXA</span>
+          </a>
+          <p style="color:var(--text-sky-light); font-size:0.92rem; max-width:320px;">
+            TRIOVEXA - Modern Software & App Development Studio. Empowering business with custom ERP, Mobile Apps & Web Solutions.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom:1rem;">Industries</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; color:var(--text-sky-light); font-size:0.9rem;">
+            <li><a href="#services">Textiles Software</a></li>
+            <li><a href="#services">Transport & Fleet Apps</a></li>
+            <li><a href="#services">Garments & Dyeing ERP</a></li>
+            <li><a href="#services">Travels Booking App</a></li>
+            <li><a href="#services">Shop Websites & POS</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom:1rem;">Quick Links</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; color:var(--text-sky-light); font-size:0.9rem;">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#delivery">Client Success</a></li>
+            <li><a href="#dashboard">Executive Dashboard</a></li>
+            <li><a href="#estimator">Cost Estimator</a></li>
+            <li><a href="#portfolio">200+ Projects</a></li>
+            <li><a href="#ratings">Client Reviews (98%)</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom:1rem;">Connect With Us</h4>
+          <div style="display:flex; gap:0.75rem;">
+            <a href="#" class="theme-toggle-btn" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+            <a href="#" class="theme-toggle-btn" aria-label="Phone"><i class="ri-phone-fill"></i></a>
+            <a href="#" class="theme-toggle-btn" aria-label="Mail"><i class="ri-mail-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 TRIOVEXA Software & App Solutions. All Rights Reserved.</div>
+        <div>200+ Projects Completed • 98.4% Success Rating</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
